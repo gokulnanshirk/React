@@ -12,7 +12,7 @@ export class CardBody extends React.Component {
                  <input type="number" placeholder="Quantity" id="txt" className="btn primary" onChange={()=>{
                      this.props.qtt(document.getElementById("txt").value,this.props.data)
                  }}></input>
-                 <button>Update Qtt</button>
+                 <button>Update Quantity</button>
                  
                  <button onClick={()=>{
                      this.props.print(this.props.data);
