@@ -1,0 +1,38 @@
+<html>
+  <script>
+    var greet = function(firstName, lastName) {
+      var greetString = "Welcome ";
+      var message = function() {
+        return greetString + firstName + lastName;
+      };
+    };
+    var agesGT = function(num, age) {
+      return age > num;
+    };
+
+    var agesLT = function(num, age) {
+      return age < num;
+    };
+
+    var ages = [1, 22, 33, 344, 33, 21, 12, 1];
+    var res = [];
+
+    var newAge = function(num) {
+      for (var i = 0; i < ages.length; i++) {
+        if (agesLT(num, ages[i])) {
+          res.push(ages[i]);
+        }
+      }
+      console.log(res);
+    };
+
+   var user={name:'gokul',lname:'krishna'}
+
+    var exeThis=function(age){
+console.log(age)
+    }
+exeThis.call(user,12)
+user.__proto__=ages
+
+  </script>
+</html>

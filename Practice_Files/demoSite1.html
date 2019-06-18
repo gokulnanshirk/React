@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <a class="navbar-brand" href="#">Home</a>
+          <a class="navbar-brand" href="#">About</a>
+          <a class="navbar-brand" href="#">Contact</a>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div id="container" class="container-fluid">
+        
+      </div>
+    </main>
+  </body>
+  <script>
+      let names;
+      let container = document.querySelector("#container");
+  
+      let promise = fetch("https://jsonplaceholder.typicode.com/users");
+      let data = promise.then(res => res.json());
+      console.log(data);
+      data.then(users => {
+        names = users.map(users => `<div class="row">
+            
+            <div class="card" >
+              <div class="card-body">
+                <p class="card-text">
+                  ${users.name}
+                </p>
+              </div>
+            </div>
+        </div>`).join(" ");
+        console.log(names);
+        container.innerHTML = `<ul>${names}</ul>`;
+      });
+    </script>
+</html>

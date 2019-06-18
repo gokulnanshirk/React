@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="button" id="start" value="Start" />
+    <input type="button" id="stop" value="stop" />
+    <div id="container"></div>
+  </body>
+  <script>
+    let startbtn = document.querySelector("#start");
+    let stopbtn = document.querySelector("#stop");
+    let sec = 0;
+    let min = 0;
+    let handle;
+
+    startbtn.addEventListener("click", () => {
+      increment();
+    });
+    stopbtn.addEventListener("click", () => {
+      stop();
+    });
+
+    var increment = () => {
+      console.log("start");
+      handle = setInterval(() => {
+        document.querySelector("#container").innerHTML = min, sec;
+        if(sec >59){
+            min=1;
+            sec=0;
+        }
+        sec++;
+      }, 1000);
+    };
+
+    let stop = () => {
+      console.log("stop");
+      clearInterval(handle);
+      sec = 0;
+      document.querySelector("#container").innerHTML = sec;
+    };
+  </script>
+</html>

@@ -1,0 +1,22 @@
+three traints of functional programming:
+1) Fun can be assigned to a var
+var sum=funtion(){ ... }
+
+2) fun acn be passed as argument
+var calclate=function(fun,a,b){return fun(a,b) }
+// can pass any function that takes 2 arguments.
+
+3) fun can be returned from a function
+var greet=function(firstName,lastName){
+var greetString="Welcome "
+
+}
+
+
+ARROWFUNCTIONS -cannot be used in objects -Should not use in EventListeners -Toplevel fuctions shouldnot be arrowFunctions.
+
+visit    css-trics.com 
+visit    getbootstrap.com
+         wrapbootstrap.com
+
+creating app=> npx create-react-app <appName>

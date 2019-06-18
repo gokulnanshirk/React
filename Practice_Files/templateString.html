@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="container"></div>
+  </body>
+  <script>
+    let node = document.querySelector("#container");
+    let user = [{ name: "gokul" }, { name: "dinesh" }, { name: "arun" }];
+    let constructTemplate = () => {
+    return  user.map(user => `<li>${user.name} </li>`).join('');
+    };
+    let template = `<ul>${constructTemplate()}</ul>`;
+    node.innerHTML = template;
+  </script>
+</html>

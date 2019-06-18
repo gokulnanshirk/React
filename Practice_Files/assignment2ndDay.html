@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="text" >
+    <div id="container"></div>
+</body>
+<script>
+    let list=document.querySelector('#container')
+let user=[{name:"mohan"},{name:"ramesh"},{name:"manoj"},{name:"suresh"},{name:"Raj"},];
+
+let constructTemplate = () => {
+    return  user.map(user => `<li>${user.name} </li>`).join('');
+    };
+    let template = `<ul>${constructTemplate()}</ul>`;
+list.innerHTML=template;
+
+let textbox=document.querySelector('#text')
+
+textbox.addEventListener('keypress',function(event){  
+  let names= user.map(user=>user.name).
+  filter(name=>{ name.startsWith(event.target.value)})
+ list.innerHTML=` <ul>${generateLi(names)}</ul>`
+})
+
+let generateLi = function(liItems){
+        return liItems
+        .map(liItem => `<li>${liItem}</li>`).join(' ')
+    }
+
+</script>
+</html>
