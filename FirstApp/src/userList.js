@@ -7,12 +7,12 @@ export function UserList(props) {
 
  
 
-  const data = props.data;
+  
   return (
     <div className="card">
-      <CardHeader data={data} />
-      <CardBody data={data} qtt={props.qtt} print={props.print} />
-      <CardFooter data={data} />
+      <CardHeader data={props.data} />
+      <CardBody data={props.data} setCounter={props.setCounter} print={props.print} />
+      <CardFooter data={props.data} />
     </div>
   );
 }
