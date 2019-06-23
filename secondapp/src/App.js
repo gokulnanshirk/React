@@ -53,7 +53,7 @@ class App extends React.Component {
     this.setState({
       courses:this.state.courses.map(course=>{
         console.log(' course selected ', data.id);
-        if(course.id == data.id){
+        if(course.id === data.id){
           course.selected = !course.selected 
          }
          return course;

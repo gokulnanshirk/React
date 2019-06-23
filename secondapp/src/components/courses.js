@@ -1,4 +1,7 @@
 import React from "react";
+import Details from './deatils'
+import { BrowserRouter, Route, NavLink } from "react-router-dom";
+
 
 class Courses extends React.Component {
   constructor(props) {
@@ -27,7 +30,7 @@ class Courses extends React.Component {
                 Duration: {data.duration}
                 <br />
               </div>
-              <button
+              {/* <button
                 className={this.btnClass(data)}
                 id={data.id}
                 onClick={() => {
@@ -36,7 +39,8 @@ class Courses extends React.Component {
                 key={data.title}
               >
                 Details
-              </button>
+              </button> */}
+              <NavLink className="btn btn-success" exact to={`/details/${data.id}`}>More Details</NavLink>
             </div>
           ))}
         </div>
