@@ -65,17 +65,15 @@ class AddCourse extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     let newCourse = {
-      courseName: event.target.name.value,
-      coursePrice: event.target.price.value,
-      courseDuration: event.target.duration.value
+      id:this.props.courses.length+1,
+      title: event.target.name.value,
+      price: event.target.price.value,
+      duration: event.target.duration.value,
+      selected:false
     };
-    console.log(newCourse);
-    let promise = axios.post(
-      "https://my-json-server.typicode.com/gokulnanshirk/api/courses",
-      newCourse
-    );
-    let result = promise.then(res => res);
-    console.log(result);
+    this.props.addCourse(newCourse);
+    this.props.history.push('/');
+    
   }
   render() {
     return (
